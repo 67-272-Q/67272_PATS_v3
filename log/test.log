@@ -1,0 +1,484 @@
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------------------
+AbilityTest: test_: Within context should verify the abilities of guest users to read crimes. 
+----------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------------------
+AbilityTest: test_: Within context should verify the abilities of vet users to do everything. 
+----------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "vet"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "role", "username", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Ed"], ["last_name", "Gruberman"], ["role", "vet"], ["username", "vet"], ["password_digest", "$2a$04$1hCkcRUUfMHy0KZmzlAfVOf77LdUChKwyCk47L9O1nqxlM.O2KmdG"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+AbilityTest: test_: Within context should verify the abilities of assistant users in PATS. 
+-------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "gruberman"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "role", "username", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Ed"], ["last_name", "Gruberman"], ["role", "assistant"], ["username", "gruberman"], ["password_digest", "$2a$04$..4fxpjvl2sUUYbPr5iFaOPR2XgmoAiCYbn3c3yXp7JRzGvxPE2gK"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "ted"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "role", "username", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Ted"], ["last_name", "Gruberman"], ["role", "assistant"], ["username", "ted"], ["password_digest", "$2a$04$lIh840WgJuJ3uvMqh5QDDOWlnWr84IOdjEJB5rTPYl5kVR/p8tvCy"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "animals" ("name") VALUES (?)[0m  [["name", "Cat"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animals" ("name") VALUES (?)[0m  [["name", "Dog"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animals" ("name") VALUES (?)[0m  [["name", "Bird"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animals" ("name") VALUES (?)[0m  [["name", "Ferret"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animals" ("name") VALUES (?)[0m  [["name", "Rabbit"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animals" ("name", "active") VALUES (?, ?)[0m  [["name", "Turtle"], ["active", "f"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "alex"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "role", "username", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Alex"], ["last_name", "Heimann"], ["role", "owner"], ["username", "alex"], ["password_digest", "$2a$04$GvMhRmfDkgSgK4sigmPN9eoQnMRao47ZtLeYEc3ZAto.q5szJnsfK"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "rachel"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "role", "username", "password_digest", "active") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Rachel"], ["last_name", "Heimann"], ["role", "owner"], ["username", "rachel"], ["password_digest", "$2a$04$nS64KSp4M1HZM.dU30YouOmCeK6zg3YSCCksFQ.1XaDh.ksRBrI0e"], ["active", "f"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "mark"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "role", "username", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Mark"], ["last_name", "Heimann"], ["role", "owner"], ["username", "mark"], ["password_digest", "$2a$04$cFWv0LuqyCzy/v8.0ElKvOct2bbAcmnjuU8rxpVUq6VA1IjEz0iTe"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "owners" ("first_name", "last_name", "street", "city", "state", "zip", "phone", "email", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Alex"], ["last_name", "Heimann"], ["street", "10152 Sudberry Drive"], ["city", "Wexford"], ["state", "PA"], ["zip", "15090"], ["phone", "5001871125"], ["email", "alex.heimann@example.com"], ["user_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "owners" ("first_name", "last_name", "street", "city", "state", "zip", "phone", "email", "active", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Rachel"], ["last_name", "Heimann"], ["street", "10152 Sudberry Drive"], ["city", "Wexford"], ["state", "PA"], ["zip", "15090"], ["phone", "2172427651"], ["email", "rachel.heimann@example.com"], ["active", "f"], ["user_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "owners" ("first_name", "last_name", "street", "city", "state", "zip", "phone", "email", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Mark"], ["last_name", "Heimann"], ["street", "10152 Sudberry Drive"], ["city", "Wexford"], ["state", "PA"], ["zip", "15090"], ["phone", "4122688211"], ["email", "mark.heimann@example.com"], ["user_id", 5]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."active" = ?[0m  [["active", "t"]]
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."active" = ?[0m  [["active", "t"]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "owner_id", "female", "date_of_birth") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dusty"], ["animal_id", 1], ["owner_id", 1], ["female", "f"], ["date_of_birth", "2011-03-29"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."active" = ?[0m  [["active", "t"]]
+  [1m[36mOwner Load (0.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."active" = ?[0m  [["active", "t"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "owner_id", "female", "date_of_birth", "active") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Polo"], ["animal_id", 1], ["owner_id", 1], ["female", "t"], ["date_of_birth", "2011-03-29"], ["active", "f"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."active" = ?[0m  [["active", "t"]]
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."active" = ?[0m  [["active", "t"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "owner_id", "female", "date_of_birth") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Pork Chop"], ["animal_id", 2], ["owner_id", 3], ["female", "t"], ["date_of_birth", "2011-03-29"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "visits" ("pet_id", "date", "weight", "overnight_stay", "total_charge") VALUES (?, ?, ?, ?, ?)[0m  [["pet_id", 1], ["date", "2020-09-29"], ["weight", 5.0], ["overnight_stay", "f"], ["total_charge", 5000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "visits" ("pet_id", "date", "weight", "overnight_stay", "total_charge") VALUES (?, ?, ?, ?, ?)[0m  [["pet_id", 2], ["date", "2020-10-29"], ["weight", 5.0], ["overnight_stay", "f"], ["total_charge", 5000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "visits" ("pet_id", "date", "weight", "overnight_stay", "total_charge") VALUES (?, ?, ?, ?, ?)[0m  [["pet_id", 2], ["date", "2021-01-29"], ["weight", 5.0], ["overnight_stay", "f"], ["total_charge", 5000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "procedures" ("name", "description", "length_of_time") VALUES (?, ?, ?)[0m  [["name", "Check-up"], ["description", "A complete check-up of pet."], ["length_of_time", 15]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "procedures" ("name", "description", "length_of_time") VALUES (?, ?, ?)[0m  [["name", "X-ray"], ["description", "X-ray taken of the pet."], ["length_of_time", 15]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "procedures" ("name", "description", "length_of_time", "active") VALUES (?, ?, ?, ?)[0m  [["name", "Dental Work"], ["description", "Dental work for the pet."], ["length_of_time", 15], ["active", "f"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcedureCost Load (0.7ms)[0m  [1m[34mSELECT  "procedure_costs".* FROM "procedure_costs" WHERE "procedure_costs"."end_date" IS NULL AND "procedure_costs"."procedure_id" = ? LIMIT ?[0m  [["procedure_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "procedure_costs" ("procedure_id", "cost", "start_date") VALUES (?, ?, ?)[0m  [["procedure_id", 1], ["cost", 2500], ["start_date", "2020-03-29"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcedureCost Load (0.1ms)[0m  [1m[34mSELECT  "procedure_costs".* FROM "procedure_costs" WHERE "procedure_costs"."end_date" IS NULL AND "procedure_costs"."procedure_id" = ? LIMIT ?[0m  [["procedure_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "procedure_costs" SET "end_date" = ? WHERE "procedure_costs"."id" = ?[0m  [["end_date", "2020-09-29"], ["id", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "procedure_costs" ("procedure_id", "cost", "start_date") VALUES (?, ?, ?)[0m  [["procedure_id", 1], ["cost", 3000], ["start_date", "2020-09-29"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcedureCost Load (0.0ms)[0m  [1m[34mSELECT  "procedure_costs".* FROM "procedure_costs" WHERE "procedure_costs"."end_date" IS NULL AND "procedure_costs"."procedure_id" = ? LIMIT ?[0m  [["procedure_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "procedure_costs" ("procedure_id", "cost", "start_date") VALUES (?, ?, ?)[0m  [["procedure_id", 2], ["cost", 4000], ["start_date", "2020-04-29"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcedureCost Load (0.0ms)[0m  [1m[34mSELECT  "procedure_costs".* FROM "procedure_costs" WHERE "procedure_costs"."end_date" IS NULL AND "procedure_costs"."procedure_id" = ? LIMIT ?[0m  [["procedure_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "procedure_costs" ("procedure_id", "cost", "start_date") VALUES (?, ?, ?)[0m  [["procedure_id", 3], ["cost", 2000], ["start_date", "2020-05-29"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "procedure_costs" SET "end_date" = ? WHERE "procedure_costs"."id" = ?[0m  [["end_date", "2020-09-29"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcedureCost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "procedure_costs" WHERE "procedure_costs"."procedure_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) LIMIT ?[0m  [["procedure_id", 1], ["LIMIT", 1]]
+  [1m[36mProcedureCost Load (0.1ms)[0m  [1m[34mSELECT  "procedure_costs".* FROM "procedure_costs" WHERE "procedure_costs"."procedure_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) ORDER BY "procedure_costs"."id" ASC LIMIT ?[0m  [["procedure_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "visits" SET "total_charge" = ? WHERE "visits"."id" = ?[0m  [["total_charge", 8000], ["id", 2]]
+  [1m[35mSQL (15.5ms)[0m  [1m[32mINSERT INTO "treatments" ("visit_id", "procedure_id", "successful") VALUES (?, ?, ?)[0m  [["visit_id", 2], ["procedure_id", 1], ["successful", "t"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcedureCost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "procedure_costs" WHERE "procedure_costs"."procedure_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) LIMIT ?[0m  [["procedure_id", 2], ["LIMIT", 1]]
+  [1m[36mProcedureCost Load (0.1ms)[0m  [1m[34mSELECT  "procedure_costs".* FROM "procedure_costs" WHERE "procedure_costs"."procedure_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) ORDER BY "procedure_costs"."id" ASC LIMIT ?[0m  [["procedure_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "visits" SET "total_charge" = ? WHERE "visits"."id" = ?[0m  [["total_charge", 11600], ["id", 2]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "treatments" ("visit_id", "procedure_id", "successful", "discount") VALUES (?, ?, ?, ?)[0m  [["visit_id", 2], ["procedure_id", 2], ["successful", "t"], ["discount", 0.1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcedureCost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "procedure_costs" WHERE "procedure_costs"."procedure_id" = ? AND (start_date <= '2020-09-29' AND (end_date > '2020-09-29' OR end_date IS NULL)) LIMIT ?[0m  [["procedure_id", 1], ["LIMIT", 1]]
+  [1m[36mProcedureCost Load (0.1ms)[0m  [1m[34mSELECT  "procedure_costs".* FROM "procedure_costs" WHERE "procedure_costs"."procedure_id" = ? AND (start_date <= '2020-09-29' AND (end_date > '2020-09-29' OR end_date IS NULL)) ORDER BY "procedure_costs"."id" ASC LIMIT ?[0m  [["procedure_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "visits" SET "total_charge" = ? WHERE "visits"."id" = ?[0m  [["total_charge", 8000], ["id", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "treatments" ("visit_id", "procedure_id", "successful") VALUES (?, ?, ?)[0m  [["visit_id", 1], ["procedure_id", 1], ["successful", "t"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "medicines" ("name", "description", "stock_amount", "admin_method", "unit", "vaccine") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Rabies"], ["description", "A potent medicine for vaccinating animals against rabies"], ["stock_amount", 10000], ["admin_method", "injection"], ["unit", "milliliters"], ["vaccine", "t"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "medicines" ("name", "description", "stock_amount", "admin_method", "unit", "vaccine") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Carprofen"], ["description", "Used to relieve pain and inflammation in dogs. Annedotal reports of severe GI effects in cats."], ["stock_amount", 50], ["admin_method", "injection"], ["unit", "milliliters"], ["vaccine", "f"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "medicines" ("name", "description", "stock_amount", "admin_method", "unit", "vaccine") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Amoxicillin"], ["description", "Antibiotic indicated for susceptible gram positive and gram negative infections. Ineffective against species that produce beta-lactamase."], ["stock_amount", 10000], ["admin_method", "injection"], ["unit", "milliliters"], ["vaccine", "f"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMedicineCost Load (0.7ms)[0m  [1m[34mSELECT  "medicine_costs".* FROM "medicine_costs" WHERE (end_date IS NULL) AND "medicine_costs"."medicine_id" = ? LIMIT ?[0m  [["medicine_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "medicine_costs" ("medicine_id", "cost_per_unit", "start_date") VALUES (?, ?, ?)[0m  [["medicine_id", 1], ["cost_per_unit", 25], ["start_date", "2020-03-29"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMedicineCost Load (0.1ms)[0m  [1m[34mSELECT  "medicine_costs".* FROM "medicine_costs" WHERE (end_date IS NULL) AND "medicine_costs"."medicine_id" = ? LIMIT ?[0m  [["medicine_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "medicine_costs" SET "end_date" = ? WHERE "medicine_costs"."id" = ?[0m  [["end_date", "2020-09-29"], ["id", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "medicine_costs" ("medicine_id", "cost_per_unit", "start_date") VALUES (?, ?, ?)[0m  [["medicine_id", 1], ["cost_per_unit", 30], ["start_date", "2020-09-29"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMedicineCost Load (0.1ms)[0m  [1m[34mSELECT  "medicine_costs".* FROM "medicine_costs" WHERE (end_date IS NULL) AND "medicine_costs"."medicine_id" = ? LIMIT ?[0m  [["medicine_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "medicine_costs" ("medicine_id", "cost_per_unit", "start_date") VALUES (?, ?, ?)[0m  [["medicine_id", 2], ["cost_per_unit", 50], ["start_date", "2020-04-29"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMedicineCost Load (0.1ms)[0m  [1m[34mSELECT  "medicine_costs".* FROM "medicine_costs" WHERE (end_date IS NULL) AND "medicine_costs"."medicine_id" = ? LIMIT ?[0m  [["medicine_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "medicine_costs" ("medicine_id", "cost_per_unit", "start_date") VALUES (?, ?, ?)[0m  [["medicine_id", 3], ["cost_per_unit", 40], ["start_date", "2020-05-29"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "medicine_costs" SET "end_date" = ? WHERE "medicine_costs"."id" = ?[0m  [["end_date", "2020-09-29"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "animal_medicines" ("animal_id", "medicine_id", "recommended_num_of_units") VALUES (?, ?, ?)[0m  [["animal_id", 1], ["medicine_id", 1], ["recommended_num_of_units", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animal_medicines" ("animal_id", "medicine_id", "recommended_num_of_units") VALUES (?, ?, ?)[0m  [["animal_id", 2], ["medicine_id", 1], ["recommended_num_of_units", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animal_medicines" ("animal_id", "medicine_id", "recommended_num_of_units") VALUES (?, ?, ?)[0m  [["animal_id", 2], ["medicine_id", 2], ["recommended_num_of_units", 100]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animal_medicines" ("animal_id", "medicine_id", "recommended_num_of_units") VALUES (?, ?, ?)[0m  [["animal_id", 1], ["medicine_id", 3], ["recommended_num_of_units", 100]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animal_medicines" ("animal_id", "medicine_id", "recommended_num_of_units") VALUES (?, ?, ?)[0m  [["animal_id", 4], ["medicine_id", 3], ["recommended_num_of_units", 100]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMedicine Load (0.1ms)[0m  [1m[34mSELECT "medicines".* FROM "medicines" WHERE "medicines"."active" = ?[0m  [["active", "t"]]
+  [1m[36mMedicine Load (0.1ms)[0m  [1m[34mSELECT "medicines".* FROM "medicines" INNER JOIN "animal_medicines" ON "animal_medicines"."medicine_id" = "medicines"."id" WHERE (animal_medicines.animal_id = 1)[0m
+  [1m[36mMedicineCost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "medicine_costs" WHERE "medicine_costs"."medicine_id" = ? AND (start_date <= '2020-09-29' AND (end_date > '2020-09-29' OR end_date IS NULL)) LIMIT ?[0m  [["medicine_id", 1], ["LIMIT", 1]]
+  [1m[36mMedicineCost Load (0.1ms)[0m  [1m[34mSELECT  "medicine_costs".* FROM "medicine_costs" WHERE "medicine_costs"."medicine_id" = ? AND (start_date <= '2020-09-29' AND (end_date > '2020-09-29' OR end_date IS NULL)) ORDER BY "medicine_costs"."id" ASC LIMIT ?[0m  [["medicine_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "visits" SET "total_charge" = ? WHERE "visits"."id" = ?[0m  [["total_charge", 9500], ["id", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "dosages" ("visit_id", "medicine_id", "units_given") VALUES (?, ?, ?)[0m  [["visit_id", 1], ["medicine_id", 1], ["units_given", 50]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "medicines" SET "stock_amount" = ? WHERE "medicines"."id" = ?[0m  [["stock_amount", 9950], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMedicine Load (0.0ms)[0m  [1m[34mSELECT "medicines".* FROM "medicines" WHERE "medicines"."active" = ?[0m  [["active", "t"]]
+  [1m[36mMedicine Load (0.1ms)[0m  [1m[34mSELECT "medicines".* FROM "medicines" INNER JOIN "animal_medicines" ON "animal_medicines"."medicine_id" = "medicines"."id" WHERE (animal_medicines.animal_id = 1)[0m
+  [1m[36mMedicineCost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "medicine_costs" WHERE "medicine_costs"."medicine_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) LIMIT ?[0m  [["medicine_id", 1], ["LIMIT", 1]]
+  [1m[36mMedicineCost Load (0.1ms)[0m  [1m[34mSELECT  "medicine_costs".* FROM "medicine_costs" WHERE "medicine_costs"."medicine_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) ORDER BY "medicine_costs"."id" ASC LIMIT ?[0m  [["medicine_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "visits" SET "total_charge" = ? WHERE "visits"."id" = ?[0m  [["total_charge", 13100], ["id", 2]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dosages" ("visit_id", "medicine_id", "units_given") VALUES (?, ?, ?)[0m  [["visit_id", 2], ["medicine_id", 1], ["units_given", 50]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "medicines" SET "stock_amount" = ? WHERE "medicines"."id" = ?[0m  [["stock_amount", 9900], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMedicine Load (0.0ms)[0m  [1m[34mSELECT "medicines".* FROM "medicines" WHERE "medicines"."active" = ?[0m  [["active", "t"]]
+  [1m[36mMedicine Load (0.1ms)[0m  [1m[34mSELECT "medicines".* FROM "medicines" INNER JOIN "animal_medicines" ON "animal_medicines"."medicine_id" = "medicines"."id" WHERE (animal_medicines.animal_id = 1)[0m
+  [1m[36mMedicineCost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "medicine_costs" WHERE "medicine_costs"."medicine_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) LIMIT ?[0m  [["medicine_id", 3], ["LIMIT", 1]]
+  [1m[36mMedicineCost Load (0.1ms)[0m  [1m[34mSELECT  "medicine_costs".* FROM "medicine_costs" WHERE "medicine_costs"."medicine_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) ORDER BY "medicine_costs"."id" ASC LIMIT ?[0m  [["medicine_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "visits" SET "total_charge" = ? WHERE "visits"."id" = ?[0m  [["total_charge", 14900], ["id", 2]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dosages" ("visit_id", "medicine_id", "units_given", "discount") VALUES (?, ?, ?, ?)[0m  [["visit_id", 2], ["medicine_id", 3], ["units_given", 50], ["discount", 0.1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "medicines" SET "stock_amount" = ? WHERE "medicines"."id" = ?[0m  [["stock_amount", 9950], ["id", 3]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "dosages" WHERE "dosages"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "dosages" WHERE "dosages"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "dosages" WHERE "dosages"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animal_medicines" WHERE "animal_medicines"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animal_medicines" WHERE "animal_medicines"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animal_medicines" WHERE "animal_medicines"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animal_medicines" WHERE "animal_medicines"."id" = ?[0m  [["id", 4]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animal_medicines" WHERE "animal_medicines"."id" = ?[0m  [["id", 5]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "medicine_costs" WHERE "medicine_costs"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "medicine_costs" WHERE "medicine_costs"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "medicine_costs" WHERE "medicine_costs"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "medicine_costs" WHERE "medicine_costs"."id" = ?[0m  [["id", 4]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "medicines" WHERE "medicines"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "medicines" WHERE "medicines"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "medicines" WHERE "medicines"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "treatments" WHERE "treatments"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "treatments" WHERE "treatments"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "treatments" WHERE "treatments"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "procedure_costs" WHERE "procedure_costs"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "procedure_costs" WHERE "procedure_costs"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "procedure_costs" WHERE "procedure_costs"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "procedure_costs" WHERE "procedure_costs"."id" = ?[0m  [["id", 4]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "procedures" WHERE "procedures"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "procedures" WHERE "procedures"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "procedures" WHERE "procedures"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "visits" WHERE "visits"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "visits" WHERE "visits"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "visits" WHERE "visits"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 4]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 5]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 6]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "owners" WHERE "owners"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "owners" WHERE "owners"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "owners" WHERE "owners"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------------
+AbilityTest: test_: Within context should verify the abilities of owner users in PATS. 
+---------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "alex"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "role", "username", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Alex"], ["last_name", "Heimann"], ["role", "owner"], ["username", "alex"], ["password_digest", "$2a$04$MKY6jvU4gD1A9.ALcNiCJOdJGfEb88mzdaa2.LtKXwHMQR2ktVy2y"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "rachel"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "role", "username", "password_digest", "active") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Rachel"], ["last_name", "Heimann"], ["role", "owner"], ["username", "rachel"], ["password_digest", "$2a$04$WzVJRQNTqXyru3M9MfAXEec7lMkttPgIynn1jAR.SXRxGzSBiVa/W"], ["active", "f"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "mark"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "role", "username", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Mark"], ["last_name", "Heimann"], ["role", "owner"], ["username", "mark"], ["password_digest", "$2a$04$GqxVM3Mzp3yOZBRJs1Tc9.InYQS6YfKts6bhUWE9AAPDFzLwmIjOq"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "owners" ("first_name", "last_name", "street", "city", "state", "zip", "phone", "email", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Alex"], ["last_name", "Heimann"], ["street", "10152 Sudberry Drive"], ["city", "Wexford"], ["state", "PA"], ["zip", "15090"], ["phone", "9356932784"], ["email", "alex.heimann@example.com"], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "owners" ("first_name", "last_name", "street", "city", "state", "zip", "phone", "email", "active", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Rachel"], ["last_name", "Heimann"], ["street", "10152 Sudberry Drive"], ["city", "Wexford"], ["state", "PA"], ["zip", "15090"], ["phone", "7052314534"], ["email", "rachel.heimann@example.com"], ["active", "f"], ["user_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "owners" ("first_name", "last_name", "street", "city", "state", "zip", "phone", "email", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Mark"], ["last_name", "Heimann"], ["street", "10152 Sudberry Drive"], ["city", "Wexford"], ["state", "PA"], ["zip", "15090"], ["phone", "4122688211"], ["email", "mark.heimann@example.com"], ["user_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animals" ("name") VALUES (?)[0m  [["name", "Cat"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animals" ("name") VALUES (?)[0m  [["name", "Dog"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "animals" ("name") VALUES (?)[0m  [["name", "Bird"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animals" ("name") VALUES (?)[0m  [["name", "Ferret"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animals" ("name") VALUES (?)[0m  [["name", "Rabbit"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animals" ("name", "active") VALUES (?, ?)[0m  [["name", "Turtle"], ["active", "f"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."active" = ?[0m  [["active", "t"]]
+  [1m[36mOwner Load (0.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."active" = ?[0m  [["active", "t"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "owner_id", "female", "date_of_birth") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dusty"], ["animal_id", 1], ["owner_id", 1], ["female", "f"], ["date_of_birth", "2011-03-29"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."active" = ?[0m  [["active", "t"]]
+  [1m[36mOwner Load (0.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."active" = ?[0m  [["active", "t"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "owner_id", "female", "date_of_birth", "active") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Polo"], ["animal_id", 1], ["owner_id", 1], ["female", "t"], ["date_of_birth", "2011-03-29"], ["active", "f"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."active" = ?[0m  [["active", "t"]]
+  [1m[36mOwner Load (0.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."active" = ?[0m  [["active", "t"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("name", "animal_id", "owner_id", "female", "date_of_birth") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Pork Chop"], ["animal_id", 2], ["owner_id", 3], ["female", "t"], ["date_of_birth", "2011-03-29"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "visits" ("pet_id", "date", "weight", "overnight_stay", "total_charge") VALUES (?, ?, ?, ?, ?)[0m  [["pet_id", 1], ["date", "2020-09-29"], ["weight", 5.0], ["overnight_stay", "f"], ["total_charge", 5000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "visits" ("pet_id", "date", "weight", "overnight_stay", "total_charge") VALUES (?, ?, ?, ?, ?)[0m  [["pet_id", 2], ["date", "2020-10-29"], ["weight", 5.0], ["overnight_stay", "f"], ["total_charge", 5000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "visits" ("pet_id", "date", "weight", "overnight_stay", "total_charge") VALUES (?, ?, ?, ?, ?)[0m  [["pet_id", 2], ["date", "2021-01-29"], ["weight", 5.0], ["overnight_stay", "f"], ["total_charge", 5000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "procedures" ("name", "description", "length_of_time") VALUES (?, ?, ?)[0m  [["name", "Check-up"], ["description", "A complete check-up of pet."], ["length_of_time", 15]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "procedures" ("name", "description", "length_of_time") VALUES (?, ?, ?)[0m  [["name", "X-ray"], ["description", "X-ray taken of the pet."], ["length_of_time", 15]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "procedures" ("name", "description", "length_of_time", "active") VALUES (?, ?, ?, ?)[0m  [["name", "Dental Work"], ["description", "Dental work for the pet."], ["length_of_time", 15], ["active", "f"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcedureCost Load (0.0ms)[0m  [1m[34mSELECT  "procedure_costs".* FROM "procedure_costs" WHERE "procedure_costs"."end_date" IS NULL AND "procedure_costs"."procedure_id" = ? LIMIT ?[0m  [["procedure_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "procedure_costs" ("procedure_id", "cost", "start_date") VALUES (?, ?, ?)[0m  [["procedure_id", 1], ["cost", 2500], ["start_date", "2020-03-29"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcedureCost Load (0.0ms)[0m  [1m[34mSELECT  "procedure_costs".* FROM "procedure_costs" WHERE "procedure_costs"."end_date" IS NULL AND "procedure_costs"."procedure_id" = ? LIMIT ?[0m  [["procedure_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "procedure_costs" SET "end_date" = ? WHERE "procedure_costs"."id" = ?[0m  [["end_date", "2020-09-29"], ["id", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "procedure_costs" ("procedure_id", "cost", "start_date") VALUES (?, ?, ?)[0m  [["procedure_id", 1], ["cost", 3000], ["start_date", "2020-09-29"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcedureCost Load (0.0ms)[0m  [1m[34mSELECT  "procedure_costs".* FROM "procedure_costs" WHERE "procedure_costs"."end_date" IS NULL AND "procedure_costs"."procedure_id" = ? LIMIT ?[0m  [["procedure_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "procedure_costs" ("procedure_id", "cost", "start_date") VALUES (?, ?, ?)[0m  [["procedure_id", 2], ["cost", 4000], ["start_date", "2020-04-29"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcedureCost Load (0.0ms)[0m  [1m[34mSELECT  "procedure_costs".* FROM "procedure_costs" WHERE "procedure_costs"."end_date" IS NULL AND "procedure_costs"."procedure_id" = ? LIMIT ?[0m  [["procedure_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "procedure_costs" ("procedure_id", "cost", "start_date") VALUES (?, ?, ?)[0m  [["procedure_id", 3], ["cost", 2000], ["start_date", "2020-05-29"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "procedure_costs" SET "end_date" = ? WHERE "procedure_costs"."id" = ?[0m  [["end_date", "2020-09-29"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcedureCost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "procedure_costs" WHERE "procedure_costs"."procedure_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) LIMIT ?[0m  [["procedure_id", 1], ["LIMIT", 1]]
+  [1m[36mProcedureCost Load (0.1ms)[0m  [1m[34mSELECT  "procedure_costs".* FROM "procedure_costs" WHERE "procedure_costs"."procedure_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) ORDER BY "procedure_costs"."id" ASC LIMIT ?[0m  [["procedure_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "visits" SET "total_charge" = ? WHERE "visits"."id" = ?[0m  [["total_charge", 8000], ["id", 2]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "treatments" ("visit_id", "procedure_id", "successful") VALUES (?, ?, ?)[0m  [["visit_id", 2], ["procedure_id", 1], ["successful", "t"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcedureCost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "procedure_costs" WHERE "procedure_costs"."procedure_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) LIMIT ?[0m  [["procedure_id", 2], ["LIMIT", 1]]
+  [1m[36mProcedureCost Load (0.1ms)[0m  [1m[34mSELECT  "procedure_costs".* FROM "procedure_costs" WHERE "procedure_costs"."procedure_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) ORDER BY "procedure_costs"."id" ASC LIMIT ?[0m  [["procedure_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "visits" SET "total_charge" = ? WHERE "visits"."id" = ?[0m  [["total_charge", 11600], ["id", 2]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "treatments" ("visit_id", "procedure_id", "successful", "discount") VALUES (?, ?, ?, ?)[0m  [["visit_id", 2], ["procedure_id", 2], ["successful", "t"], ["discount", 0.1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcedureCost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "procedure_costs" WHERE "procedure_costs"."procedure_id" = ? AND (start_date <= '2020-09-29' AND (end_date > '2020-09-29' OR end_date IS NULL)) LIMIT ?[0m  [["procedure_id", 1], ["LIMIT", 1]]
+  [1m[36mProcedureCost Load (0.1ms)[0m  [1m[34mSELECT  "procedure_costs".* FROM "procedure_costs" WHERE "procedure_costs"."procedure_id" = ? AND (start_date <= '2020-09-29' AND (end_date > '2020-09-29' OR end_date IS NULL)) ORDER BY "procedure_costs"."id" ASC LIMIT ?[0m  [["procedure_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "visits" SET "total_charge" = ? WHERE "visits"."id" = ?[0m  [["total_charge", 8000], ["id", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "treatments" ("visit_id", "procedure_id", "successful") VALUES (?, ?, ?)[0m  [["visit_id", 1], ["procedure_id", 1], ["successful", "t"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "medicines" ("name", "description", "stock_amount", "admin_method", "unit", "vaccine") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Rabies"], ["description", "A potent medicine for vaccinating animals against rabies"], ["stock_amount", 10000], ["admin_method", "injection"], ["unit", "milliliters"], ["vaccine", "t"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "medicines" ("name", "description", "stock_amount", "admin_method", "unit", "vaccine") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Carprofen"], ["description", "Used to relieve pain and inflammation in dogs. Annedotal reports of severe GI effects in cats."], ["stock_amount", 50], ["admin_method", "injection"], ["unit", "milliliters"], ["vaccine", "f"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "medicines" ("name", "description", "stock_amount", "admin_method", "unit", "vaccine") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Amoxicillin"], ["description", "Antibiotic indicated for susceptible gram positive and gram negative infections. Ineffective against species that produce beta-lactamase."], ["stock_amount", 10000], ["admin_method", "injection"], ["unit", "milliliters"], ["vaccine", "f"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMedicineCost Load (0.1ms)[0m  [1m[34mSELECT  "medicine_costs".* FROM "medicine_costs" WHERE (end_date IS NULL) AND "medicine_costs"."medicine_id" = ? LIMIT ?[0m  [["medicine_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "medicine_costs" ("medicine_id", "cost_per_unit", "start_date") VALUES (?, ?, ?)[0m  [["medicine_id", 1], ["cost_per_unit", 25], ["start_date", "2020-03-29"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMedicineCost Load (0.1ms)[0m  [1m[34mSELECT  "medicine_costs".* FROM "medicine_costs" WHERE (end_date IS NULL) AND "medicine_costs"."medicine_id" = ? LIMIT ?[0m  [["medicine_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "medicine_costs" SET "end_date" = ? WHERE "medicine_costs"."id" = ?[0m  [["end_date", "2020-09-29"], ["id", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "medicine_costs" ("medicine_id", "cost_per_unit", "start_date") VALUES (?, ?, ?)[0m  [["medicine_id", 1], ["cost_per_unit", 30], ["start_date", "2020-09-29"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMedicineCost Load (0.1ms)[0m  [1m[34mSELECT  "medicine_costs".* FROM "medicine_costs" WHERE (end_date IS NULL) AND "medicine_costs"."medicine_id" = ? LIMIT ?[0m  [["medicine_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "medicine_costs" ("medicine_id", "cost_per_unit", "start_date") VALUES (?, ?, ?)[0m  [["medicine_id", 2], ["cost_per_unit", 50], ["start_date", "2020-04-29"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMedicineCost Load (0.1ms)[0m  [1m[34mSELECT  "medicine_costs".* FROM "medicine_costs" WHERE (end_date IS NULL) AND "medicine_costs"."medicine_id" = ? LIMIT ?[0m  [["medicine_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "medicine_costs" ("medicine_id", "cost_per_unit", "start_date") VALUES (?, ?, ?)[0m  [["medicine_id", 3], ["cost_per_unit", 40], ["start_date", "2020-05-29"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "medicine_costs" SET "end_date" = ? WHERE "medicine_costs"."id" = ?[0m  [["end_date", "2020-09-29"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "animal_medicines" ("animal_id", "medicine_id", "recommended_num_of_units") VALUES (?, ?, ?)[0m  [["animal_id", 1], ["medicine_id", 1], ["recommended_num_of_units", 100]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animal_medicines" ("animal_id", "medicine_id", "recommended_num_of_units") VALUES (?, ?, ?)[0m  [["animal_id", 2], ["medicine_id", 1], ["recommended_num_of_units", 100]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animal_medicines" ("animal_id", "medicine_id", "recommended_num_of_units") VALUES (?, ?, ?)[0m  [["animal_id", 2], ["medicine_id", 2], ["recommended_num_of_units", 100]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animal_medicines" ("animal_id", "medicine_id", "recommended_num_of_units") VALUES (?, ?, ?)[0m  [["animal_id", 1], ["medicine_id", 3], ["recommended_num_of_units", 100]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "animal_medicines" ("animal_id", "medicine_id", "recommended_num_of_units") VALUES (?, ?, ?)[0m  [["animal_id", 4], ["medicine_id", 3], ["recommended_num_of_units", 100]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMedicine Load (0.1ms)[0m  [1m[34mSELECT "medicines".* FROM "medicines" WHERE "medicines"."active" = ?[0m  [["active", "t"]]
+  [1m[36mMedicine Load (0.1ms)[0m  [1m[34mSELECT "medicines".* FROM "medicines" INNER JOIN "animal_medicines" ON "animal_medicines"."medicine_id" = "medicines"."id" WHERE (animal_medicines.animal_id = 1)[0m
+  [1m[36mMedicineCost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "medicine_costs" WHERE "medicine_costs"."medicine_id" = ? AND (start_date <= '2020-09-29' AND (end_date > '2020-09-29' OR end_date IS NULL)) LIMIT ?[0m  [["medicine_id", 1], ["LIMIT", 1]]
+  [1m[36mMedicineCost Load (0.1ms)[0m  [1m[34mSELECT  "medicine_costs".* FROM "medicine_costs" WHERE "medicine_costs"."medicine_id" = ? AND (start_date <= '2020-09-29' AND (end_date > '2020-09-29' OR end_date IS NULL)) ORDER BY "medicine_costs"."id" ASC LIMIT ?[0m  [["medicine_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "visits" SET "total_charge" = ? WHERE "visits"."id" = ?[0m  [["total_charge", 9500], ["id", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dosages" ("visit_id", "medicine_id", "units_given") VALUES (?, ?, ?)[0m  [["visit_id", 1], ["medicine_id", 1], ["units_given", 50]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "medicines" SET "stock_amount" = ? WHERE "medicines"."id" = ?[0m  [["stock_amount", 9950], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMedicine Load (0.0ms)[0m  [1m[34mSELECT "medicines".* FROM "medicines" WHERE "medicines"."active" = ?[0m  [["active", "t"]]
+  [1m[36mMedicine Load (0.1ms)[0m  [1m[34mSELECT "medicines".* FROM "medicines" INNER JOIN "animal_medicines" ON "animal_medicines"."medicine_id" = "medicines"."id" WHERE (animal_medicines.animal_id = 1)[0m
+  [1m[36mMedicineCost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "medicine_costs" WHERE "medicine_costs"."medicine_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) LIMIT ?[0m  [["medicine_id", 1], ["LIMIT", 1]]
+  [1m[36mMedicineCost Load (0.1ms)[0m  [1m[34mSELECT  "medicine_costs".* FROM "medicine_costs" WHERE "medicine_costs"."medicine_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) ORDER BY "medicine_costs"."id" ASC LIMIT ?[0m  [["medicine_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "visits" SET "total_charge" = ? WHERE "visits"."id" = ?[0m  [["total_charge", 13100], ["id", 2]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dosages" ("visit_id", "medicine_id", "units_given") VALUES (?, ?, ?)[0m  [["visit_id", 2], ["medicine_id", 1], ["units_given", 50]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "medicines" SET "stock_amount" = ? WHERE "medicines"."id" = ?[0m  [["stock_amount", 9900], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMedicine Load (8.5ms)[0m  [1m[34mSELECT "medicines".* FROM "medicines" WHERE "medicines"."active" = ?[0m  [["active", "t"]]
+  [1m[36mMedicine Load (0.1ms)[0m  [1m[34mSELECT "medicines".* FROM "medicines" INNER JOIN "animal_medicines" ON "animal_medicines"."medicine_id" = "medicines"."id" WHERE (animal_medicines.animal_id = 1)[0m
+  [1m[36mMedicineCost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "medicine_costs" WHERE "medicine_costs"."medicine_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) LIMIT ?[0m  [["medicine_id", 3], ["LIMIT", 1]]
+  [1m[36mMedicineCost Load (0.1ms)[0m  [1m[34mSELECT  "medicine_costs".* FROM "medicine_costs" WHERE "medicine_costs"."medicine_id" = ? AND (start_date <= '2020-10-29' AND (end_date > '2020-10-29' OR end_date IS NULL)) ORDER BY "medicine_costs"."id" ASC LIMIT ?[0m  [["medicine_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "visits" SET "total_charge" = ? WHERE "visits"."id" = ?[0m  [["total_charge", 14900], ["id", 2]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dosages" ("visit_id", "medicine_id", "units_given", "discount") VALUES (?, ?, ?, ?)[0m  [["visit_id", 2], ["medicine_id", 3], ["units_given", 50], ["discount", 0.1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "medicines" SET "stock_amount" = ? WHERE "medicines"."id" = ?[0m  [["stock_amount", 9950], ["id", 3]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."owner_id" = ?[0m  [["owner_id", 1]]
+  [1m[36mVisit Load (0.1ms)[0m  [1m[34mSELECT "visits".* FROM "visits" INNER JOIN "pets" ON "visits"."pet_id" = "pets"."id" WHERE "pets"."owner_id" = ?[0m  [["owner_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "visits" ("pet_id", "date", "weight", "overnight_stay", "total_charge") VALUES (?, ?, ?, ?, ?)[0m  [["pet_id", 3], ["date", "2020-09-29"], ["weight", 5.0], ["overnight_stay", "f"], ["total_charge", 5000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "visits" WHERE "visits"."id" = ?[0m  [["id", 4]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "dosages" WHERE "dosages"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "dosages" WHERE "dosages"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "dosages" WHERE "dosages"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animal_medicines" WHERE "animal_medicines"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animal_medicines" WHERE "animal_medicines"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animal_medicines" WHERE "animal_medicines"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animal_medicines" WHERE "animal_medicines"."id" = ?[0m  [["id", 4]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animal_medicines" WHERE "animal_medicines"."id" = ?[0m  [["id", 5]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "medicine_costs" WHERE "medicine_costs"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "medicine_costs" WHERE "medicine_costs"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "medicine_costs" WHERE "medicine_costs"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "medicine_costs" WHERE "medicine_costs"."id" = ?[0m  [["id", 4]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "medicines" WHERE "medicines"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "medicines" WHERE "medicines"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "medicines" WHERE "medicines"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "treatments" WHERE "treatments"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "treatments" WHERE "treatments"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "treatments" WHERE "treatments"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "procedure_costs" WHERE "procedure_costs"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "procedure_costs" WHERE "procedure_costs"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "procedure_costs" WHERE "procedure_costs"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "procedure_costs" WHERE "procedure_costs"."id" = ?[0m  [["id", 4]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "procedures" WHERE "procedures"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "procedures" WHERE "procedures"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "procedures" WHERE "procedures"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "visits" WHERE "visits"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "visits" WHERE "visits"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "visits" WHERE "visits"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 4]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 5]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "animals" WHERE "animals"."id" = ?[0m  [["id", 6]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "owners" WHERE "owners"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "owners" WHERE "owners"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "owners" WHERE "owners"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
